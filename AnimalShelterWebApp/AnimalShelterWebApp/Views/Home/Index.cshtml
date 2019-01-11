@@ -1,31 +1,68 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
 }
+<!DOCTYPE html>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShelterHome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    
+</head>
+    <body>
+        <div class="container">
+            <img class="w-100" src="@Url.Content("~/Images/BannerDog.jpg")" alt="IMAGES" />
+            <div class="myh text-white text-center">
+                <h1>Animal Shelter</h1>
+                <h3>Home</h3>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-mainGreen">
+                <a class="navbar-brand" href="#">Animal Shelter</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="ShelterHome.html">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ShelterStorage.html">Storage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ShelterEvent.html">Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ShelterHotel.html">Hotel</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container" id="footerAndBody">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+            <div class="jumbotron w-100 mt-2 mb-2 bg-mainGreen text-center text-dark pt-3 pb-3">
+                <h3 class="text-white">About Shelter</h3>
+
+                <form class="mt-2">
+                    <textarea class="width100 text-center rounded" rows="5" placeholder="Enter basic info about the shelter. It will be displayed on the front page."></textarea>
+                </form>
+                <button type="button" class="btn bg-white text-center text-dark mt-3 mb-0">Subscribe</button>
+
+
+            </div>
+
+            <div class="container bg-mainGreen text-white text-center">
+                <p class="p-1">&copy; 2019 Joanna Piórkowaska, Karolina Makowska, Kajetan Krzewina</p>
+            </div>
+        </div>
+
+    </body>
+
+</html>

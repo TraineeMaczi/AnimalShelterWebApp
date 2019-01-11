@@ -6,19 +6,16 @@ using System.Web.Mvc;
 
 namespace AnimalShelterWebApp.Controllers
 {
-    public class HomeController : Controller
+    public class HelloController : Controller
     {
-        // Pod /Home/Index i pod / po nazwie po prostu jest default jakby był DomowyController to by nie weszło 
-        
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult SetAbout()
+        public ActionResult Subscribe()
         {
             //to do
-            return RedirectPermanent("/Home/Index");
+            return View("Index");
         }
-        
     }
 }
