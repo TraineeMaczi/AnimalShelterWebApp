@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "HelloView";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ShelterHello</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+    <body>
+        <div class="container">
+            <img class="w-100" src="@Url.Content("~/Images/BannerDog.jpg")" alt="IMAGES" />
+            <div class="myh text-white text-center">
+                <h1>Animal Shelter</h1>
+                <h3>Hello</h3>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-mainGreen">
+                <a class="navbar-brand" href="#">Animal Shelter</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+        <div class="container text-center" id="footerAndBody">
+
+            <div class="jumbotron w-100 mt-2 mb-2 bg-mainGreen text-center text-dark pt-3 pb-3">
+
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="text-white">About Us</h3>
+                        <div class="jumbotron bg-white m-0">
+                            <p>Tutaj będzie wyświetlać się informacja o schronisku, którą można ustawić na panelu Home.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <h3 class="text-white">Subscribe</h3>
+                        <form id="addSubscribersForm">
+                            <div class="jumbotron bg-white p-4">
+                                <div class="row m-0">
+                                    <div class="col-sm">
+                                        <input class="text-center rounded" type="text" placeholder="e-mail" disabled />
+                                    </div>
+                                    <div class="col-sm">
+                                        <input class="rounded" type="email" />
+                                    </div>
+                                </div>
+                                <button type="button" class="btn bg-mainGreen text-center text-white mt-3 mb-0">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container bg-mainGreen text-white text-center">
+                <p class="p-1">&copy; 2019 Joanna Piórkowaska, Karolina Makowska, Kajetan Krzewina</p>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
