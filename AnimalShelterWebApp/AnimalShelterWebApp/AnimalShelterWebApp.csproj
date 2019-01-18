@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\InputModels\Hello\SubscriberInputModel.cs" />
+    <Compile Include="Models\InputModels\Hotel\ResidentInputModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

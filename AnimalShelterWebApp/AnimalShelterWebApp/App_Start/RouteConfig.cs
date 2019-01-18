@@ -47,8 +47,11 @@ namespace AnimalShelterWebApp
             #endregion
             #region Hotel
             routes.MapRoute(
-               name: "StartHotel",
-               url: "Hotel"
+               //name: "StartHotel",
+               //url: "Hotel"
+                name: "StartHotel",
+                url: "Hotel/{action}/{id}",
+                defaults: new { action = UrlParameter.Optional, id = UrlParameter.Optional }
            );
             #endregion
             #region Storage
