@@ -48,7 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Abstract\IAboutShelterInfoRepository.cs" />
+    <Compile Include="Abstract\IEventRepository.cs" />
+    <Compile Include="Abstract\IItemRepository.cs" />
+    <Compile Include="Abstract\IResidentRepository.cs" />
+    <Compile Include="Abstract\ISubscriberRepository.cs" />
+    <Compile Include="Concrete\AboutShelterInfoRepository.cs" />
+    <Compile Include="Concrete\EventRepository.cs" />
+    <Compile Include="Concrete\ItemRepository.cs" />
+    <Compile Include="Concrete\ResidentRepository.cs" />
+    <Compile Include="Concrete\SubscriberRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,5 +70,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

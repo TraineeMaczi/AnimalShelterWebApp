@@ -29,10 +29,11 @@ namespace Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new CategoryConfiguration());
-            modelBuilder.Configurations.Add(new OrderConfiguration());
-            modelBuilder.Configurations.Add(new ProductConfiguration());
-
+            modelBuilder.Configurations.Add(new AboutShelterConfiguration());
+            modelBuilder.Configurations.Add(new EventConfiguration());
+            modelBuilder.Configurations.Add(new ItemConfiguration());
+            modelBuilder.Configurations.Add(new ResidentConfiguration());
+            modelBuilder.Configurations.Add(new SubscriberConfiguration());
             base.OnModelCreating(modelBuilder);
         }
         public static AppContext Create()
