@@ -47,7 +47,12 @@ namespace AnimalShelterWebApp.Controllers
             {
                 var resident = new Resident
                 {
-                    OwnerEmail = model.OwnerEmail
+                    Name = model.Name,
+                    Type = model.Type,
+                    From = model.From,
+                    To = model.To,
+                    OwnerEmail = model.OwnerEmail,
+                    Desc = model.Desc
                 };
                 await _residentRepository.SaveResidentAsync(resident);
             }

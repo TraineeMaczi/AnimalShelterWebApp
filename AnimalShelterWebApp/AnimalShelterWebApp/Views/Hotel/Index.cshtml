@@ -10,19 +10,19 @@
         @using (Html.BeginForm("Resident", "Hotel", "FormMethod.Post"))
         {
             <div class="jumbotron bg-white p-4">
-                <form>
+                <form id="addResidentForm">
                     <div class="row m-0">
                         <div class="col-sm">
                             <input class="text-center rounded" type="text" placeholder="Name" disabled />
                         </div>
                         <div class="col-sm">
-                            <input class="rounded" type="text" />
+                            @Html.TextBoxFor(model => model.Name);
                         </div>
                         <div class="col-sm">
                             <input class="text-center rounded" type="text" placeholder="Type" disabled />
                         </div>
                         <div class="col-sm">
-                            <input class="rounded" type="text" />
+                            @Html.TextBoxFor(model => model.Type);
                         </div>
                     </div>
                     <div class="row m-0">
@@ -30,13 +30,13 @@
                             <input class="text-center rounded" type="text" placeholder="From" disabled />
                         </div>
                         <div class="col-sm">
-                            <input class="rounded" type="text" />
+                            @Html.TextBoxFor(model => model.Type);
                         </div>
                         <div class="col-sm">
                             <input class="text-center rounded" type="text" placeholder="To" disabled />
                         </div>
                         <div class="col-sm">
-                            <input class="rounded" type="text" />
+                            @Html.TextBoxFor(model => model.To);
                         </div>
                     </div>
                     <div class="row m-0">
@@ -44,16 +44,16 @@
                             <input class="text-center rounded" type="text" placeholder="Owner e-mail" disabled />
                         </div>
                         <div class="col-sm">
-                            <input class="rounded" type="email" />
+                            @Html.TextBoxFor(model => model.OwnerEmail);
                         </div>
                         <div class="col-sm">
                             <input class="text-center rounded" type="text" placeholder="Description" disabled />
                         </div>
                         <div class="col-sm">
-                            <input class="rounded" type="text" />
+                            @Html.TextBoxFor(model => model.Desc);
                         </div>
                     </div>
-                    <button type="button" class="btn bg-mainGreen text-center text-white mt-3 mb-0">Add Event</button>
+                    <button type="submit" class="btn bg-mainGreen text-center text-white mt-3 mb-0">Add Event</button>
                 </form>
             </div>
         }
