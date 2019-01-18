@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 using Model.Configuration;
 using Model.Entities;
-using System;
-using System.Collections.Generic;
+
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Model
 {
@@ -22,7 +19,7 @@ namespace Model
         public DbSet<Item> Items { get; set; }
         public DbSet<Resident> Residents { get; set; }
         public DbSet<Subscriber> Subscribers { get; set; }
-        public AppContext() : base("AppConnection")
+        public AppContext() : base("AnimalShelterConnection")
         {
 
         }

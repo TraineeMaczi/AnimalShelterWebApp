@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Abstract
 {
-    interface IItemRepository
+    public interface IItemRepository
     {
         Task<Item> GetItemAsync(int id);
         Task<List<Item>> GetItemsAsync();

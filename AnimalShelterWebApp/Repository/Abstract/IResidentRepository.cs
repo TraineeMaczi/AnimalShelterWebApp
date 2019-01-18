@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Repository.Abstract
 {
-    interface IResidentRepository
+    public interface IResidentRepository
     {
         Task<Resident> GetResidentAsync(int id);
         Task<List<Resident>> GetResidentsAsync();
-        Task<bool> SaveResidentAsync(Item item);
-        Task<bool> DeleteResidentAsync(Item item);
+        Task<bool> SaveResidentAsync(Resident resident);
+        Task<bool> DeleteResidentAsync(Resident resident);
     }
 }
