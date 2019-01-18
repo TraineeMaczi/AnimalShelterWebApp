@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AnimalShelterWebApp.Models.InputModels;
+using Model.Entities;
+using Repository.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,13 +11,25 @@ namespace AnimalShelterWebApp.Controllers
 {
     public class HelloController : Controller
     {
+        private readonly ISubscriberRepository _subscriberRepository;
+        public HelloController(ISubscriberRepository subscriberRepository)
+        {
+            _subscriberRepository = subscriberRepository;
+        }
+
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Subscribe()
+        [HttpPost]
+        public ActionResult Subscribe(SubscriberInputModel subscriberInputModel)
         {
-            //to do
+            if (subscriberInputModel != null)
+            {
+                Subscriber subscriber = new Subscriber();
+                subscriber.Email = subscriberInputModel.Email;
+                _subscriberRepository.SaveSubscriberAsync(subscriber);
+            }
             return View("Index");
         }
     }
