@@ -13,6 +13,7 @@ namespace AnimalShelterWebApp.Controllers
     public class HelloController : Controller
     {
         private readonly ISubscriberRepository _subscriberRepository;
+
         public HelloController(ISubscriberRepository subscriberRepository)
         {
             _subscriberRepository = subscriberRepository;

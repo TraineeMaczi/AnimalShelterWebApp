@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Repository.Concrete
 {
     public class ResidentRepository : BaseRepository, IResidentRepository

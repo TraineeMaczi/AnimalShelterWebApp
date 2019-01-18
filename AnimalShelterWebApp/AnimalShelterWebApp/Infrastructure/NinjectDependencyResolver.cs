@@ -35,7 +35,9 @@ namespace AnimalShelterWebApp.Infrastructure
             // Bindings added here
             #region Repositories
             kernel.Bind<ISubscriberRepository>().To<SubscriberRepository>();
+            kernel.Bind<IResidentRepository>().To<ResidentRepository>();
             #endregion
+
         }
     }
    
