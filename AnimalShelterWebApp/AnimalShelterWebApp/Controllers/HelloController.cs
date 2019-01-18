@@ -22,17 +22,7 @@ namespace AnimalShelterWebApp.Controllers
         {
             return View();
         }
-        /*  [HttpPost]
-          public ActionResult Subscribe(SubscriberInputModel subscriberInputModel)
-          {
-              if (subscriberInputModel != null)
-              {
-                  var subscriber = new Subscriber();
-                  subscriber.Email = subscriberInputModel.Email;
-                  _subscriberRepository.SaveSubscriberAsync(subscriber);
-              }
-              return Redirect("/Hello");
-          }*/
+
         [HttpPost]
         [AllowAnonymous]
         [Route("/Hello/Subscribe")]
