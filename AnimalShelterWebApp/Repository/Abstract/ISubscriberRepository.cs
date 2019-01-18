@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Repository.Abstract
 {
-    interface ISubscriberRepository
+    public interface ISubscriberRepository
     {
         Task<Subscriber> GetSubscriberAsync(int id);
-        Task<List<Subscriber>> GetSubscriberAsync();
-        Task<bool> SaveSubscriberAsync(Item item);
-        Task<bool> DeleteSubscriberAsync(Item item);
+        Task<List<Subscriber>> GetSubscribersAsync();
+        Task<bool> SaveSubscriberAsync(Subscriber subscriber);
+        Task<bool> DeleteSubscriberAsync(Subscriber subscriber);
     }
 }

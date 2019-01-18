@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    interface IEventRepository
+    public interface IEventRepository
     {
         Task<Event> GetEventAsync(int id);
-        Task<List<Event>> GetEventssAsync();
+        Task<List<Event>> GetEventsAsync();
         Task<bool> SaveEventAsync(Event eventInstance);
         Task<bool> DeleteEventAsync(Event eventInstance);
     }

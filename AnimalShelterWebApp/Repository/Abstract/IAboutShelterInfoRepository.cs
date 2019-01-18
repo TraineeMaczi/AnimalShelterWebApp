@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Abstract
 {
-    interface IAboutShelterInfoRepository
+    public interface IAboutShelterInfoRepository
     {
         Task<AboutShelterInfo> GetAboutShelterInfoAsync(int id);
         Task<List<AboutShelterInfo>> GetAboutShelterInfosAsync();
