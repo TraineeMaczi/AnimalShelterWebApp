@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace Model.Entities
 {
-    public class Class1
+    public class Subscriber
     {
+        public int Id { get; set; }
+        public String Email {get;set;} 
     }
 }
