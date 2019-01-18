@@ -10,7 +10,7 @@ namespace Repository.Abstract
     interface IItemRepository
     {
         Task<Item> GetItemAsync(int id);
-        Task<List<Item>> GetItemssAsync();
+        Task<List<Item>> GetItemsAsync();
         Task<bool> SaveItemAsync(Item item);
         Task<bool> DeleteItemAsync(Item item);
     }

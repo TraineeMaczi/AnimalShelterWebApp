@@ -54,6 +54,7 @@
     <Compile Include="Abstract\IResidentRepository.cs" />
     <Compile Include="Abstract\ISubscriberRepository.cs" />
     <Compile Include="Concrete\AboutShelterInfoRepository.cs" />
+    <Compile Include="Concrete\BaseRepository.cs" />
     <Compile Include="Concrete\EventRepository.cs" />
     <Compile Include="Concrete\ItemRepository.cs" />
     <Compile Include="Concrete\ResidentRepository.cs" />
