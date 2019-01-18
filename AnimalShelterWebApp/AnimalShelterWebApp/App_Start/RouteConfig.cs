@@ -12,12 +12,51 @@ namespace AnimalShelterWebApp
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            #region Home
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "{controller}/{action}/{id}", //id to może być cokolwiek
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "SetAbout",
+                url: "{controller}/{action}/{id}", 
+                defaults: new { controller = "Home", action = "SetAbout", id = UrlParameter.Optional }
+            );
+            #endregion
+
+            #region Hello
+            routes.MapRoute(
+                name: "StartHello",
+                url: "Hello/{action}/{id}",
+                defaults: new {action =UrlParameter.Optional, id = UrlParameter.Optional }
+
+            );
+            /*routes.MapRoute(
+                name: "Subscribe",
+                url: "Hello/Subscribe"
+            );*/
+            #endregion
+
+            #region Event
+            routes.MapRoute(
+               name: "StartEvent",
+               url: "Event"
+           );
+            #endregion
+            #region Hotel
+            routes.MapRoute(
+               name: "StartHotel",
+               url: "Hotel"
+           );
+            #endregion
+            #region Storage
+            routes.MapRoute(
+               name: "StartStorage",
+               url: "Storage"
+           );
+            #endregion
         }
     }
 }

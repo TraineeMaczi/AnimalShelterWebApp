@@ -1,4 +1,39 @@
-﻿body {
+﻿.bg-mainGreen {
+    background-color: rgb(0,51,26);
+}
+
+.myh {
+    position: absolute;
+    top: 30%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 780px) {
+    .myh {
+        position: absolute;
+        top: 40%;
+        bottom: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        font-size: 100%;
+    }
+
+    h3 {
+        font-size: 100%;
+    }
+}
+.width100 {
+min-width:100%;
+}
+.makeMeScroll {
+    display: inline-block;
+    overflow-y: scroll;
+    max-height: 200px;
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
