@@ -177,8 +177,11 @@
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\InputModels\Hello\SubscriberInputModel.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\InputModels\Storage\ItemInputModel.cs" />
     <Compile Include="Models\OutputModels\Storage\ItemOutputModel.cs" />
+=======
+>>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

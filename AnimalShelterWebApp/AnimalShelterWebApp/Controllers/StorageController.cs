@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using AnimalShelterWebApp.Models.InputModels.Storage;
 using Model.Entities;
 using Repository.Abstract;
@@ -5,6 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+>>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,6 +18,7 @@ namespace AnimalShelterWebApp.Controllers
 {
     public class StorageController : Controller
     {
+<<<<<<< HEAD
         private readonly IItemRepository _itemRepository;
 
         public StorageController(IItemRepository itemRepository)
@@ -19,10 +26,14 @@ namespace AnimalShelterWebApp.Controllers
             _itemRepository = itemRepository;
         }
 
+=======
+        
+>>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
         public ActionResult Index()
         {
             return View();
         }
+<<<<<<< HEAD
 
         [System.Web.Http.HttpPost]
         [System.Web.Http.AllowAnonymous]
@@ -41,5 +52,16 @@ namespace AnimalShelterWebApp.Controllers
         }
 
 
+=======
+        public String AddItems()
+        {
+            return "to do";
+        }
+        public String DeleteItem()
+        {
+            return "to do";
+        }
+       
+>>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
     }
 }
