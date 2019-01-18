@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{E842C99C-3A4F-4B81-9A72-3FD662A9D4C9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{BD34028A-678D-4FC4-B872-42D6BD8D7C62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7369B2F4-B5C1-45FE-92D3-8E73D5FB91BE} = {BD34028A-678D-4FC4-B872-42D6BD8D7C62}
+		{E842C99C-3A4F-4B81-9A72-3FD662A9D4C9} = {BD34028A-678D-4FC4-B872-42D6BD8D7C62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BAA0888-C126-421E-AF32-FF995E691910}
