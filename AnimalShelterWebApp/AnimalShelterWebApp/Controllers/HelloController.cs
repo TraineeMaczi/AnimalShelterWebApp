@@ -4,6 +4,7 @@ using Repository.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -21,16 +22,30 @@ namespace AnimalShelterWebApp.Controllers
         {
             return View();
         }
+        /*  [HttpPost]
+          public ActionResult Subscribe(SubscriberInputModel subscriberInputModel)
+          {
+              if (subscriberInputModel != null)
+              {
+                  var subscriber = new Subscriber();
+                  subscriber.Email = subscriberInputModel.Email;
+                  _subscriberRepository.SaveSubscriberAsync(subscriber);
+              }
+              return Redirect("/Hello");
+          }*/
         [HttpPost]
-        public ActionResult Subscribe(SubscriberInputModel subscriberInputModel)
+        [AllowAnonymous]
+        [Route("/Hello/Subscribe")]
+        public async Task<ActionResult>Subscribe(SubscriberInputModel model)
         {
-            if (subscriberInputModel != null)
+            if (model != null)
             {
-                Subscriber subscriber = new Subscriber();
-                subscriber.Email = subscriberInputModel.Email;
-                _subscriberRepository.SaveSubscriberAsync(subscriber);
+                var subscriber = new Subscriber();
+                subscriber.Email = model.Email;
+                await _subscriberRepository.SaveSubscriberAsync(subscriber);
             }
-            return View("Index");
+            return Redirect("/Hello");
         }
+
     }
 }

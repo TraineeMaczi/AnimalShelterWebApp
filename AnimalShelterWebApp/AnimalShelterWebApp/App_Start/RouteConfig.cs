@@ -29,12 +29,14 @@ namespace AnimalShelterWebApp
             #region Hello
             routes.MapRoute(
                 name: "StartHello",
-                url: "Hello"
+                url: "Hello/{action}/{id}",
+                defaults: new {action =UrlParameter.Optional, id = UrlParameter.Optional }
+
             );
-            routes.MapRoute(
+            /*routes.MapRoute(
                 name: "Subscribe",
                 url: "Hello/Subscribe"
-            );
+            );*/
             #endregion
 
             #region Event
