@@ -91,15 +91,11 @@ namespace AnimalShelterWebApp.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [Route("/Hotel/ResidentAdd")]
+        [Route("/Hotel/ResidentDelete")]
         public async Task<ActionResult> ResidentDelete(string delete)
         {
             Resident resident = new Resident { Id = Int32.Parse(delete) };
-
             await _residentRepository.DeleteResidentAsync(resident);
-
-            //await _residentRepository.DeleteResidentAsync(resident);
-
             return Redirect("/Hotel");
         }
     }
