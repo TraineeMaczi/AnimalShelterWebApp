@@ -9,12 +9,15 @@
 
         @using (Html.BeginForm("SetAbout", "Home", "FormMethod.Post"))
         {
-            <form class="mt-2">
-                @Html.TextBoxFor(m => m.Desc)
-                <!-- <textarea class="width100 text-center rounded" rows="5" placeholder="Enter basic info about the shelter. It will be displayed on the front page."></textarea>
-                -->
-            </form>
-            <button type="submit" class="btn bg-white text-center text-dark mt-3 mb-0">AddInfo</button>
+        <form class="mt-2">
+          
+            @Html.EditorFor(m => m.Desc, new { htmlAttributes = new { @class = "width100 text-center rounded" } })
+
+            <button type="submit" class="btn bg-white text-center text-dark mt-3 mb-0">
+                Add Info
+            </button>
+        </form>
+            
         }
 
     </div>

@@ -21,16 +21,21 @@ namespace AnimalShelterWebApp
 
             routes.MapRoute(
                 name: "SetAbout",
-                url: "{controller}/{action}/{id}", 
-                defaults: new { controller = "Home", action = "SetAbout", id = UrlParameter.Optional }
+                url: "Home/SetAbout"
+               // defaults: new { action =UrlParameter.Optional, id = UrlParameter.Optional }
             );
             #endregion
 
             #region Hello
             routes.MapRoute(
                 name: "StartHello",
-                url: "Hello/{action}/{id}",
-                defaults: new {action=UrlParameter.Optional, id=UrlParameter.Optional }
+                url: "Hello"
+
+            );
+            routes.MapRoute(
+                name: "Subscribe",
+                url: "Hello/Subscribe"
+               
 
             );
             #endregion

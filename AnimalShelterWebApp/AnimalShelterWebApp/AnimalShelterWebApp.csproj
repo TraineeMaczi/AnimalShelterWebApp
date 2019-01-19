@@ -177,15 +177,10 @@
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\InputModels\Hello\SubscriberInputModel.cs" />
-<<<<<<< HEAD
     <Compile Include="Models\InputModels\Home\AboutShelterInfoInputModel.cs" />
-=======
-<<<<<<< HEAD
     <Compile Include="Models\InputModels\Storage\ItemInputModel.cs" />
+    <Compile Include="Models\OutputModels\Hello\AboutShelterInfoOutputModel.cs" />
     <Compile Include="Models\OutputModels\Storage\ItemOutputModel.cs" />
-=======
->>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
->>>>>>> 2b358485e73d4c94afea03e7a964606d5e2a39e6
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

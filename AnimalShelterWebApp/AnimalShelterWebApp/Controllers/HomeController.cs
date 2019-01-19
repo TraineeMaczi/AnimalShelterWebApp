@@ -20,6 +20,8 @@ namespace AnimalShelterWebApp.Controllers
         }
         public ActionResult Index()
         {
+           
+
             return View();
         }
         [HttpPost]
@@ -31,6 +33,11 @@ namespace AnimalShelterWebApp.Controllers
             {
                 var about = new AboutShelterInfo();
                 about.Desc = model.Desc;
+                List<AboutShelterInfo> l=await _aboutShelterInfoRepository.GetAboutShelterInfosAsync();
+                foreach (var x in l)
+                {
+                    await _aboutShelterInfoRepository.DeleteAboutShelterInfoAsync(x);
+                }
                 await _aboutShelterInfoRepository.SaveAboutShelterInfoAsync(about);
             }
             return Redirect("/Home");
