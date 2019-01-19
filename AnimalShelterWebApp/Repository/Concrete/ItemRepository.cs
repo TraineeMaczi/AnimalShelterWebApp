@@ -59,11 +59,11 @@ namespace Repository.Concrete
             return true;
         }
 
-
         public List<Item> GetItemsInfos()
         {
             var infos = context.Items.ToList();
             return infos;
         }
+
     }
 }

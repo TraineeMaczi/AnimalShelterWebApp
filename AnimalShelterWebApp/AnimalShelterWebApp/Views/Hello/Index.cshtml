@@ -1,4 +1,4 @@
-﻿@model AnimalShelterWebApp.Models.InputModels.SubscriberInputModel
+﻿@model AnimalShelterWebApp.Models.InputModels.Hello.SubscriberInputModel
 @{
 
 }
@@ -10,7 +10,7 @@
             <div class="col-sm">
                 <h3 class="text-white">About Us</h3>
                 <div class="jumbotron bg-white m-0">
-                    <p>Tutaj będzie wyświetlać się informacja o schronisku, którą można ustawić na panelu Home.</p>
+                    <p>@ViewBag.Message</p>
                 </div>
             </div>
             <div class="col-sm">
@@ -24,7 +24,7 @@
                                 <input class="text-center rounded" type="text" placeholder="e-mail" disabled />
                             </div>
                             <div class="col-sm">
-                                @Html.TextBoxFor(model=>model.Email);
+                                @Html.TextBoxFor(model=>model.Email)
                                 <!--<input class="rounded" type="email" />-->
                             </div>
                         </div>

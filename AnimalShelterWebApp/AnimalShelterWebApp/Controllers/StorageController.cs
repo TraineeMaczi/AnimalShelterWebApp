@@ -1,14 +1,10 @@
 ﻿using AnimalShelterWebApp.Models.InputModels.Storage;
 using Model.Entities;
 using Repository.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using System.Web;
 using System.Web.Mvc;
 using AnimalShelterWebApp.Models.OutputModels.Storage;
@@ -56,7 +52,6 @@ namespace AnimalShelterWebApp.Controllers
 
             return View();
         }
-
         [HttpGet]
         public async Task<ActionResult> GetItems()
         {
@@ -74,7 +69,6 @@ namespace AnimalShelterWebApp.Controllers
 
             return Redirect("/Storage");
         }
-
         [System.Web.Http.HttpPost]
         [System.Web.Http.AllowAnonymous]
         [System.Web.Http.Route("/Storage/AddItem")]
@@ -90,7 +84,6 @@ namespace AnimalShelterWebApp.Controllers
             }
             return Redirect("/Storage");
         }
-
         [HttpPost]
         [AllowAnonymous]
         [Route("/Storage/AddItem")]
@@ -100,5 +93,6 @@ namespace AnimalShelterWebApp.Controllers
             await _itemRepository.DeleteItemAsync(item);
             return Redirect("/Storage");
         }
+
     }
 }
