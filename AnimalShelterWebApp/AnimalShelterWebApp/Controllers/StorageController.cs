@@ -96,10 +96,8 @@ namespace AnimalShelterWebApp.Controllers
         [Route("/Storage/AddItem")]
         public async Task<ActionResult> ItemDelete(string delete)
         {
-           Item item = new Item{ Id = Int32.Parse(delete) };
-
+            var item = await _itemRepository.GetItemAsync(Int32.Parse(delete));
             await _itemRepository.DeleteItemAsync(item);
-
             return Redirect("/Storage");
         }
     }

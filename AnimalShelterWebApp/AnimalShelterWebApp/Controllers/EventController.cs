@@ -81,10 +81,8 @@ namespace AnimalShelterWebApp.Controllers
         [Route("/Event/AddEvent")]
         public async Task<ActionResult> EventDelete(string delete)
         {
-            Event _event = new Event { Id = Int32.Parse(delete) };
-
+            var _event = await _eventRepository.GetEventAsync(Int32.Parse(delete));
             await _eventRepository.DeleteEventAsync(_event);
-
             return Redirect("/Event");
         }
     }
