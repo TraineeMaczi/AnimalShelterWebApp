@@ -1,6 +1,7 @@
-﻿@model AnimalShelterWebApp.Models.InputModels.Hotel.ResidentInputModel
-@{
-
+﻿
+@model AnimalShelterWebApp.Models.InputModels.Hotel.ResidentInputModel
+@{ 
+    ViewBag.Title = "Index";
 }
 <div class="container" id="footerAndBody">
 
@@ -96,6 +97,7 @@
                             <td>This is a cat.</td>
                             <td> <button type="button" class="btn bg-mainGreen text-center text-white m-0">Delete</button></td>
                         </tr>
+                        @Html.ViewData["table"]
                     </tbody>
                 </table>
             </div>

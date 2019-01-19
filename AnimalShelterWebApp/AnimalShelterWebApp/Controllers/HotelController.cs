@@ -21,6 +21,41 @@ namespace AnimalShelterWebApp.Controllers
 
         public ActionResult Index()
         {
+            string name = "Name(placeholder)";
+            string type = "Type(placeholder)";
+            string from = "From(placeholder)";
+            string to = "To(placeholder)";
+            string ownerEmail = "OwnerEmail(placeholder)";
+            string desc = "Descrription(placeholder)";
+            string button = "< button type = \"button\" class=\"btn bg-mainGreen text - center text - white m - 0\">Delete</button>";
+
+            string table = 
+                "<tr>" +
+                    "<td>" +
+                        name +
+                    "</td>" +
+                    "<td>" +
+                        type +
+                    "</td>" +
+                    "<td>" +
+                        from +
+                    "</td>" +
+                    "<td>" +
+                        to +
+                    "</td>" +
+                    "<td>" +
+                        ownerEmail +
+                    "</td>" +
+                    "<td>" +
+                        desc +
+                    "</td>" +
+                    "<td>" +
+                        button +
+                    "</td>" +
+                "</tr>";
+
+            ViewData["table"] = table;
+
             return View();
         }
         public String AddAnimal()
