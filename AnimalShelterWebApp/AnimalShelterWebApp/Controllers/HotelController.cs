@@ -50,7 +50,7 @@ namespace AnimalShelterWebApp.Controllers
                             x.Desc +
                         "</td>" +
                         "<td>" +
-                            "<button type=\"submit\" class=\"btn bg-mainGreen text-center text-white m-0\" value=\"" + x.Id + "\">Delete</button>" +
+                            "<button type=\"submit\" class=\"btn bg-mainGreen text-center text-white m-0\" name=\"delete\" value=\"" + x.Id + "\">Delete</button>" +
                         "</td>" +
                     "</tr>";
                 }
@@ -92,10 +92,13 @@ namespace AnimalShelterWebApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Route("/Hotel/ResidentAdd")]
-        public async Task<ActionResult> ResidentDelete(int Id)
+        public async Task<ActionResult> ResidentDelete(string delete)
         {
+            Resident resident = new Resident { Id = Int32.Parse(delete) };
 
-            await _residentRepository.DeleteResidentAsync(resident)
+            await _residentRepository.DeleteResidentAsync(resident);
+
+            //await _residentRepository.DeleteResidentAsync(resident);
 
             return Redirect("/Hotel");
         }

@@ -16,10 +16,12 @@ namespace Repository.Concrete
             if (resident == null)
                 return false;
 
-            context.Residents.Remove(resident);
+            //context.Residents.Remove(resident);
 
             try
             {
+                context.Residents.Attach(resident);
+                context.Entry(resident).State = EntityState.Deleted;
                 await context.SaveChangesAsync();
             }
             catch (Exception)
