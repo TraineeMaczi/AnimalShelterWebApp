@@ -7,6 +7,7 @@ namespace AnimalShelterWebApp.Models.InputModels.Hotel
 {
     public class ResidentInputModel
     {
+        public int Id { get; }
         public String Name { get; set; }            // imie zwierzaka
         public String From { get; set; }            // od kiedy
         public String To { get; set; }              // do kiedy

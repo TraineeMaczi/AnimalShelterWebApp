@@ -11,6 +11,7 @@ namespace Repository.Abstract
     {
         Task<Resident> GetResidentAsync(int id);
         Task<List<Resident>> GetResidentsAsync();
+        List<Resident> GetResidentsInfos();
         Task<bool> SaveResidentAsync(Resident resident);
         Task<bool> DeleteResidentAsync(Resident resident);
     }

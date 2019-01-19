@@ -21,51 +21,46 @@ namespace AnimalShelterWebApp.Controllers
 
         public ActionResult Index()
         {
-            string name = "Name(placeholder)";
-            string type = "Type(placeholder)";
-            string from = "From(placeholder)";
-            string to = "To(placeholder)";
-            string ownerEmail = "OwnerEmail(placeholder)";
-            string desc = "Descrription(placeholder)";
-            string button = "< button type = \"button\" class=\"btn bg-mainGreen text - center text - white m - 0\">Delete</button>";
+            string table = "";
 
-            string table = 
-                "<tr>" +
-                    "<td>" +
-                        name +
-                    "</td>" +
-                    "<td>" +
-                        type +
-                    "</td>" +
-                    "<td>" +
-                        from +
-                    "</td>" +
-                    "<td>" +
-                        to +
-                    "</td>" +
-                    "<td>" +
-                        ownerEmail +
-                    "</td>" +
-                    "<td>" +
-                        desc +
-                    "</td>" +
-                    "<td>" +
-                        button +
-                    "</td>" +
-                "</tr>";
-
+            List<Resident> l = _residentRepository.GetResidentsInfos();
+            if (l.Count() < 1) return View();
+            else
+            {
+                foreach (var x in l)
+                {
+                    table +=
+                    "<tr>" +
+                        "<td>" +
+                            x.Name +
+                        "</td>" +
+                        "<td>" +
+                            x.Type +
+                        "</td>" +
+                        "<td>" +
+                            x.From +
+                        "</td>" +
+                        "<td>" +
+                            x.To +
+                        "</td>" +
+                        "<td>" +
+                            x.OwnerEmail +
+                        "</td>" +
+                        "<td>" +
+                            x.Desc +
+                        "</td>" +
+                        "<td>" +
+                            "<button type=\"submit\" class=\"btn bg-mainGreen text-center text-white m-0\" value=\"" + x.Id + "\">Delete</button>" +
+                        "</td>" +
+                    "</tr>";
+                }
+            }
+           
             ViewData["table"] = table;
 
             return View();
         }
-        public String AddAnimal()
-        {
-            return "to do";
-        }
-        public String DeleteAnimal()
-        {
-            return "to do";
-        }
+
         public String NotifyAnimalOwner()
         {
             //Nie za bardzo wiem jak to zaimplementować w najprostrzym przypdaku można by przy 
@@ -75,8 +70,8 @@ namespace AnimalShelterWebApp.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [Route("/Hotel/Resident")]
-        public async Task<ActionResult> Resident(ResidentInputModel model)
+        [Route("/Hotel/ResidentAdd")]
+        public async Task<ActionResult> ResidentAdd(ResidentInputModel model)
         {
             if (model != null)
             {
@@ -91,6 +86,17 @@ namespace AnimalShelterWebApp.Controllers
                 };
                 await _residentRepository.SaveResidentAsync(resident);
             }
+            return Redirect("/Hotel");
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("/Hotel/ResidentAdd")]
+        public async Task<ActionResult> ResidentDelete(int Id)
+        {
+
+            await _residentRepository.DeleteResidentAsync(resident)
+
             return Redirect("/Hotel");
         }
     }

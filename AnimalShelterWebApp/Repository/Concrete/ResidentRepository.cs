@@ -35,6 +35,12 @@ namespace Repository.Concrete
             return resident;
         }
 
+        public List<Resident> GetResidentsInfos()
+        {
+            var infos = context.Residents.ToList();
+            return infos;
+        }
+
         public async Task<List<Resident>> GetResidentsAsync()
         {
             var residents = await context.Residents.ToListAsync();
