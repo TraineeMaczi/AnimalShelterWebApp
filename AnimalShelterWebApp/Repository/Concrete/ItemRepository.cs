@@ -1,17 +1,13 @@
-
 ﻿using Model.Entities;
 using Repository.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository.Concrete
 {
-
     public class ItemRepository : BaseRepository, IItemRepository
     {
         public async Task<bool> DeleteItemAsync(Item item)
@@ -61,6 +57,12 @@ namespace Repository.Concrete
                 return false;
             }
             return true;
+        }
+
+        public List<Item> GetItemsInfos()
+        {
+            var infos = context.Items.ToList();
+            return infos;
         }
 
     }

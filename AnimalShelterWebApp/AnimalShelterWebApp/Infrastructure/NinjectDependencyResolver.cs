@@ -1,4 +1,5 @@
-﻿using Ninject;
+using Ninject;
+using Repository;
 using Repository.Abstract;
 using Repository.Concrete;
 using System;
@@ -35,9 +36,10 @@ namespace AnimalShelterWebApp.Infrastructure
             // Bindings added here
             #region Repositories
             kernel.Bind<ISubscriberRepository>().To<SubscriberRepository>();
+            kernel.Bind<IItemRepository>().To<ItemRepository>();
+            kernel.Bind<IEventRepository>().To<EventRepository>();
             kernel.Bind<IAboutShelterInfoRepository>().To<AboutShelterInfoRepository>();
             kernel.Bind<IItemRepository>().To<ItemRepository>();
-
             #endregion
         }
     }

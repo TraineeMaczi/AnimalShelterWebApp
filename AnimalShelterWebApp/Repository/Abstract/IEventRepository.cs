@@ -13,5 +13,6 @@ namespace Repository
         Task<List<Event>> GetEventsAsync();
         Task<bool> SaveEventAsync(Event eventInstance);
         Task<bool> DeleteEventAsync(Event eventInstance);
+        List<Event> GetEventsInfos();
     }
 }
