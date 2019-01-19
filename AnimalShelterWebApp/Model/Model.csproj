@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -59,15 +60,13 @@
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Resident.cs" />
     <Compile Include="Entities\Subscriber.cs" />
-<<<<<<< HEAD
-    <Compile Include="Migrations\201901182023546_InitialCreate.cs" />
-    <Compile Include="Migrations\201901182023546_InitialCreate.Designer.cs">
-      <DependentUpon>201901182023546_InitialCreate.cs</DependentUpon>
-=======
-    <Compile Include="Migrations\201901181435573_InitialCreate.cs" />
-    <Compile Include="Migrations\201901181435573_InitialCreate.Designer.cs">
-      <DependentUpon>201901181435573_InitialCreate.cs</DependentUpon>
->>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
+    <Compile Include="Migrations\201901191817021_InitialCreate3.cs" />
+    <Compile Include="Migrations\201901191817021_InitialCreate3.Designer.cs">
+      <DependentUpon>201901191817021_InitialCreate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901191828375_InitialCreate.cs" />
+    <Compile Include="Migrations\201901191828375_InitialCreate.Designer.cs">
+      <DependentUpon>201901191828375_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,13 +76,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\201901182023546_InitialCreate.resx">
-      <DependentUpon>201901182023546_InitialCreate.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201901181435573_InitialCreate.resx">
-      <DependentUpon>201901181435573_InitialCreate.cs</DependentUpon>
->>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
+    <EmbeddedResource Include="Migrations\201901191817021_InitialCreate3.resx">
+      <DependentUpon>201901191817021_InitialCreate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901191828375_InitialCreate.resx">
+      <DependentUpon>201901191828375_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

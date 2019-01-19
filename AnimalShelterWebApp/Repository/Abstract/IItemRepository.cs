@@ -13,5 +13,6 @@ namespace Repository.Abstract
         Task<List<Item>> GetItemsAsync();
         Task<bool> SaveItemAsync(Item item);
         Task<bool> DeleteItemAsync(Item item);
+        List<Item> GetItemsInfos();
     }
 }

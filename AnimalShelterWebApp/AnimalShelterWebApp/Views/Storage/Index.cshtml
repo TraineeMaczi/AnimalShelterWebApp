@@ -1,5 +1,7 @@
-<<<<<<< HEAD
 ﻿@model AnimalShelterWebApp.Models.InputModels.Storage.ItemInputModel
+@{
+    ViewBag.Title = "Index";
+}
 
 <div class="container" id="footerAndBody">
 
@@ -9,125 +11,48 @@
         <div class="jumbotron bg-white p-4">
             @using (Html.BeginForm("AddItem", "Storage", "FormMethod.Post"))
             {
-            <form id="addItemForm">
-                <div class="row m-0">
-                    <div class="col-sm">
-                        <input class="text-center rounded" type="text" placeholder="Name" disabled />
+                <form id="addItemForm">
+                    <div class="row m-0">
+                        <div class="col-sm">
+                            <input class="text-center rounded" type="text" placeholder="Name" disabled />
+                        </div>
+                        <div class="col-sm">
+                            @Html.TextBoxFor(model => model.Name);
+                        </div>
+                        <div class="col-sm">
+                            <input class="text-center rounded" type="text" placeholder="Storage" disabled />
+                        </div>
+                        <div class="col-sm">
+                            @Html.TextBoxFor(model => model.Storage);
+                        </div>
                     </div>
-                    <div class="col-sm">
-                        @Html.TextBoxFor(model => model.Name);
-                    </div>
-                    <div class="col-sm">
-                        <input class="text-center rounded" type="text" placeholder="Storage" disabled />
-                    </div>
-                    <div class="col-sm">
-                        @Html.TextBoxFor(model => model.Storage);
-                    </div>
-                </div>
-                <button type="submit" class="btn bg-mainGreen text-center text-white mt-3 mb-0">Add Item</button>
-            </form>
+                    <button type="submit" class="btn bg-mainGreen text-center text-white mt-3 mb-0">Add Item</button>
+                </form>
             }
 
         </div>
 
         <h3 class="text-white">Mange storage items</h3>
-        <div class="jumbotron bg-white p-4">
-
-
-            <div class="table-responsive makeMeScroll">
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Storage</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>Kosc</td>
-                            <td>4</td>
-                            <td> <button type="button" class="btn bg-mainGreen text-center text-white m-0">Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>Pilka</td>
-                            <td>10</td>
-                            <td><button type="button" class="btn bg-mainGreen text-center text-white m-0">Delete</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+        @using (Html.BeginForm("ItemDelete", "Storage", "FormMethod.Post"))
+        {
+            <div class="jumbotron bg-white p-4">
+                <div class="table-responsive makeMeScroll">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Storage</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @Html.Raw(ViewData["table"])
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-
-
+        }
     </div>
     <div class="container bg-mainGreen text-white text-center">
         <p class="p-1">&copy; 2019 Joanna Piórkowaska, Karolina Makowska, Kajetan Krzewina</p>
     </div>
-</div>
-=======
-﻿        <div class="container" id="footerAndBody">
-
-            <div class="jumbotron w-100 mt-2 mb-2 bg-mainGreen text-center text-dark pt-3 pb-3">
-
-                <h3 class="text-white">Add items to storage</h3>
-                <div class="jumbotron bg-white p-4">
-                    <form>
-                        <div class="row m-0">
-                            <div class="col-sm">
-                                <input class="text-center rounded" type="text" placeholder="Name" disabled />
-                            </div>
-                            <div class="col-sm">
-                                <input class="rounded" type="text" />
-                            </div>
-                            <div class="col-sm">
-                                <input class="text-center rounded" type="text" placeholder="Storage" disabled />
-                            </div>
-                            <div class="col-sm">
-                                <input class="rounded" type="text" />
-                            </div>
-                        </div>
-                        <button type="button" class="btn bg-mainGreen text-center text-white mt-3 mb-0">Add</button>
-                    </form>
-                </div>
-
-                <h3 class="text-white">Mange storage items</h3>
-                <div class="jumbotron bg-white p-4">
-
-
-                    <div class="table-responsive makeMeScroll">
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Storage</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>Kosc</td>
-                                    <td>4</td>
-                                    <td> <button type="button" class="btn bg-mainGreen text-center text-white m-0">Delete</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Pilka</td>
-                                    <td>10</td>
-                                    <td><button type="button" class="btn bg-mainGreen text-center text-white m-0">Delete</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="container bg-mainGreen text-white text-center">
-                <p class="p-1">&copy; 2019 Joanna Piórkowaska, Karolina Makowska, Kajetan Krzewina</p>
-            </div>
-        </div>
->>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
