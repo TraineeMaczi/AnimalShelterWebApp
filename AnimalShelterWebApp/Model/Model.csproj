@@ -95,13 +95,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+
     <EmbeddedResource Include="Migrations\201901201005346_InitialCreate.resx">
       <DependentUpon>201901201005346_InitialCreate.cs</DependentUpon>
-=======
+<!--
     <EmbeddedResource Include="Migrations\201901201042290_InitialCreate.resx">
       <DependentUpon>201901201042290_InitialCreate.cs</DependentUpon>
->>>>>>> 540b1bdb4d314540833b6e1a101e3f9c5ce90b4d
+-->
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
