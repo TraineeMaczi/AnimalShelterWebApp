@@ -60,10 +60,18 @@
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Resident.cs" />
     <Compile Include="Entities\Subscriber.cs" />
+    <!--
+
+    <Compile Include="Migrations\201901182029280_InitialCreate.cs" />
+    <Compile Include="Migrations\201901182029280_InitialCreate.Designer.cs">
+      <DependentUpon>201901182029280_InitialCreate.cs</DependentUpon>
+
     <Compile Include="Migrations\201901192033225_InitialCreate.cs" />
     <Compile Include="Migrations\201901192033225_InitialCreate.Designer.cs">
       <DependentUpon>201901192033225_InitialCreate.cs</DependentUpon>
+
     </Compile>
+-->
     <!--
     <Compile Include="Migrations\201901191817021_InitialCreate3.cs" />
     <Compile Include="Migrations\201901191817021_InitialCreate3.Designer.cs">
@@ -81,9 +89,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <!--
+
+    <EmbeddedResource Include="Migrations\201901182029280_InitialCreate.resx">
+      <DependentUpon>201901182029280_InitialCreate.cs</DependentUpon>
+
     <EmbeddedResource Include="Migrations\201901192033225_InitialCreate.resx">
       <DependentUpon>201901192033225_InitialCreate.cs</DependentUpon>
+
     </EmbeddedResource>
+-->
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -180,6 +180,8 @@
     <Compile Include="Models\InputModels\Event\EventInputModel.cs" />
     <Compile Include="Models\InputModels\Hello\SubscriberInputModel.cs" />
 
+    <Compile Include="Models\InputModels\Hotel\ResidentInputModel.cs" />
+
     <Compile Include="Models\InputModels\Home\AboutShelterInfoInputModel.cs" />
 
     <Compile Include="Models\InputModels\Storage\ItemInputModel.cs" />
