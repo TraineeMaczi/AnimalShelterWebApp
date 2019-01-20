@@ -98,56 +98,62 @@ namespace AnimalShelterWebApp.Controllers
             List<Subscriber> subscribers = await _subcriberRepository.GetSubscribersAsync();
             List<Event> events = await _eventRepository.GetEventsAsync();
 
-            string password = "Tutej wklej prawdziwe hasło";
+            string password = "Tutej dej hasło!";
 
             SmtpClient smtpClient = new SmtpClient()
             {
                 Credentials = new System.Net.NetworkCredential("animalshelterwebapp@gmail.com", password),
-                //UseDefaultCredentials = true,
-                //DeliveryMethod = SmtpDeliveryMethod.Network,
                 EnableSsl = true,
                 Port = 587,
                 Host = "smtp.gmail.com"
             };
 
-            System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate (object s,
-                        System.Security.Cryptography.X509Certificates.X509Certificate certificate,
-                        System.Security.Cryptography.X509Certificates.X509Chain chain,
-                        System.Net.Security.SslPolicyErrors sslPolicyErrors)
-            {
-                return true;
-            };
-
             MailMessage mail = new MailMessage
             {
                 From = new MailAddress("animalshelterwebapp@gmail.com", "Animal Shelter", System.Text.Encoding.UTF8),
-                Subject = "Test Events Mail",
+                Subject = "Animal Shelter Events Buletin",
                 BodyEncoding = System.Text.Encoding.UTF8
             };
 
             // dodajemy odbiorców z bazy
             foreach (var x in subscribers)
             {
-                mail.To.Add(x.Email);
+                mail.Bcc.Add(x.Email);
             }
 
             StringBuilder body = new StringBuilder();
 
-            body.Append("Upcoming events: ");
-            body.AppendLine();
+            body.AppendLine("<html>");
+            body.AppendLine("<head>");
+            body.AppendLine("<style>");
+            body.AppendLine("th, td { padding: 10px; }");
+            body.AppendLine("</style>");
+            body.AppendLine("</head>");
+            body.AppendLine("<body>");
+            body.AppendLine("<h1>Upcoming events:</h1>");
+            body.AppendLine("<table border=\"0\" style=\"border: none;\">");
+            body.AppendLine("<tr><th> Name </th><th> Date </th><th> Time </th><th> About </th></tr>");
+
             foreach (var y in events)
             {
+                body.Append("<tr><td>");
                 body.Append(y.Name);
-                body.Append("\t");
+                body.Append("</td><td>");
                 body.Append(y.Date);
-                body.Append("\t");
+                body.Append("</td><td>");
                 body.Append(y.Time);
-                body.Append("\t");
+                body.Append("</td><td>");
                 body.Append(y.About);
+                body.Append("</td></tr>");
                 body.AppendLine();
             }
+            body.AppendLine("</table>");
+            body.AppendLine("</body>");
+            body.AppendLine("</html>");
 
             mail.Body = body.ToString();
+            mail.IsBodyHtml = true;
+
             try
             {
                 await smtpClient.SendMailAsync(mail);
