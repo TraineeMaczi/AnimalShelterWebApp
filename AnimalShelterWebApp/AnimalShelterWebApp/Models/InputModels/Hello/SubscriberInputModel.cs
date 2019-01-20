@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace AnimalShelterWebApp.Models.InputModels
+namespace AnimalShelterWebApp.Models.InputModels.Hello
 {
     public class SubscriberInputModel
     {

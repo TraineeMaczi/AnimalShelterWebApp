@@ -14,7 +14,7 @@ namespace Model.Configuration
         {
             Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.Name).HasMaxLength(50);
-            Property(x => x.Storage); // ? można nic nie określać ?
+            Property(x => x.Storage); // ? można nic 
         }
     }
 }

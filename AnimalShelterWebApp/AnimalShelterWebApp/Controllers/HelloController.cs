@@ -1,4 +1,6 @@
 ﻿using AnimalShelterWebApp.Models.InputModels;
+using AnimalShelterWebApp.Models.InputModels.Hello;
+using AnimalShelterWebApp.Models.OutputModels.Hello;
 using Model.Entities;
 using Repository.Abstract;
 using System;
@@ -13,27 +15,26 @@ namespace AnimalShelterWebApp.Controllers
     public class HelloController : Controller
     {
         private readonly ISubscriberRepository _subscriberRepository;
-
-        public HelloController(ISubscriberRepository subscriberRepository)
+        private readonly IAboutShelterInfoRepository _aboutShelterInfoRepository;
+        public HelloController(ISubscriberRepository subscriberRepository,IAboutShelterInfoRepository aboutShelterInfoRepository)
         {
             _subscriberRepository = subscriberRepository;
+            _aboutShelterInfoRepository = aboutShelterInfoRepository;
         }
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            return View();
+            List<AboutShelterInfo> l = _aboutShelterInfoRepository.GetAboutShelterInfos();
+            if (l.Count() != 1) return View();
+            else
+            {
+                AboutShelterInfoOutputModel about = new AboutShelterInfoOutputModel();
+                about.AboutShelter = l.First().Desc;
+                ViewBag.Message = about.AboutShelter;
+                return View();
+            }
         }
-        /*  [HttpPost]
-          public ActionResult Subscribe(SubscriberInputModel subscriberInputModel)
-          {
-              if (subscriberInputModel != null)
-              {
-                  var subscriber = new Subscriber();
-                  subscriber.Email = subscriberInputModel.Email;
-                  _subscriberRepository.SaveSubscriberAsync(subscriber);
-              }
-              return Redirect("/Hello");
-          }*/
+
         [HttpPost]
         [AllowAnonymous]
         [Route("/Hello/Subscribe")]
