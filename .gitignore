@@ -415,3 +415,6 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+/AnimalShelterWebApp/Model/Migrations/201901201042290_InitialCreate.cs
+/AnimalShelterWebApp/Model/Migrations/201901201042290_InitialCreate.Designer.cs
+/AnimalShelterWebApp/Model/Migrations/201901201042290_InitialCreate.resx
