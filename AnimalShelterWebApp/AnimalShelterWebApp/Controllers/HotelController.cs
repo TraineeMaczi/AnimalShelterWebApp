@@ -92,7 +92,7 @@ namespace AnimalShelterWebApp.Controllers
         [Route("/Hotel/ResidentAnimal")]
         public async Task<ActionResult> ResidentAnimal(string animal)
         {
-            if (animal.Substring(0, 4) == "send")
+            if ((animal.Length>4) && (animal.Substring(0, 4).Equals("send")))
             {
                 // tutaj cała hochsztaplerka żeby wydobyć z bazy odpowiednie zwirze po ID
                 int id = Int32.Parse(animal.Substring(4, animal.Length - 4));
@@ -143,6 +143,7 @@ namespace AnimalShelterWebApp.Controllers
             }
             else
             {
+  
                 Resident resident = new Resident { Id = Int32.Parse(animal) };
                 await _residentRepository.DeleteResidentAsync(resident);
             }
