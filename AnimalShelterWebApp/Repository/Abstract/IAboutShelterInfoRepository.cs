@@ -11,6 +11,7 @@ namespace Repository.Abstract
     {
         Task<AboutShelterInfo> GetAboutShelterInfoAsync(int id);
         Task<List<AboutShelterInfo>> GetAboutShelterInfosAsync();
+        List<AboutShelterInfo> GetAboutShelterInfos();
         Task<bool> SaveAboutShelterInfoAsync(AboutShelterInfo aboutShelterInfo);
         Task<bool> DeleteAboutShelterInfoAsync(AboutShelterInfo aboutShelterInfo);
     }

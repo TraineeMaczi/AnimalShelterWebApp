@@ -10,6 +10,6 @@ namespace Model.Entities
     {
         public int Id { get; set; }
         public String Name { get; set; }
-        public double Storage { get; set; }
+        public int Storage { get; set; }
     }
 }

@@ -21,22 +21,23 @@ namespace AnimalShelterWebApp
 
             routes.MapRoute(
                 name: "SetAbout",
-                url: "{controller}/{action}/{id}", 
-                defaults: new { controller = "Home", action = "SetAbout", id = UrlParameter.Optional }
+                url: "Home/SetAbout"
+               // defaults: new { action =UrlParameter.Optional, id = UrlParameter.Optional }
             );
             #endregion
 
             #region Hello
             routes.MapRoute(
                 name: "StartHello",
-                url: "Hello/{action}/{id}",
-                defaults: new {action =UrlParameter.Optional, id = UrlParameter.Optional }
+                url: "Hello"
 
             );
-            /*routes.MapRoute(
+            routes.MapRoute(
                 name: "Subscribe",
                 url: "Hello/Subscribe"
-            );*/
+               
+
+            );
             #endregion
 
             #region Event
@@ -47,8 +48,11 @@ namespace AnimalShelterWebApp
             #endregion
             #region Hotel
             routes.MapRoute(
-               name: "StartHotel",
-               url: "Hotel"
+               //name: "StartHotel",
+               //url: "Hotel"
+                name: "StartHotel",
+                url: "Hotel/{action}/{id}",
+                defaults: new { action = UrlParameter.Optional, id = UrlParameter.Optional }
            );
             #endregion
             #region Storage

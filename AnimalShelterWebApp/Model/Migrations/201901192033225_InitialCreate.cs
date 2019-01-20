@@ -34,7 +34,7 @@ namespace Model.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(maxLength: 50),
-                        Storage = c.Double(nullable: false),
+                        Storage = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             

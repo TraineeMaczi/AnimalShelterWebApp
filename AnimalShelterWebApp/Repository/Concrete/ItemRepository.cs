@@ -1,20 +1,13 @@
-<<<<<<< HEAD
 ﻿using Model.Entities;
 using Repository.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-=======
-﻿using System;
-using System.Collections.Generic;
->>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository.Concrete
 {
-<<<<<<< HEAD
     public class ItemRepository : BaseRepository, IItemRepository
     {
         public async Task<bool> DeleteItemAsync(Item item)
@@ -65,9 +58,12 @@ namespace Repository.Concrete
             }
             return true;
         }
-=======
-    class ItemRepository
-    {
->>>>>>> f432d7f93dd54f3cd3a15f28835ad2e2c02ee184
+
+        public List<Item> GetItemsInfos()
+        {
+            var infos = context.Items.ToList();
+            return infos;
+        }
+
     }
 }

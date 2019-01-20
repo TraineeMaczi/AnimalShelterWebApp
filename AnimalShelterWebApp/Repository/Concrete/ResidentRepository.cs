@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Repository.Concrete
 {
     public class ResidentRepository : BaseRepository, IResidentRepository
@@ -17,10 +16,10 @@ namespace Repository.Concrete
             if (resident == null)
                 return false;
 
-            context.Residents.Remove(resident);
-
             try
             {
+                context.Residents.Attach(resident);
+                context.Entry(resident).State = EntityState.Deleted;
                 await context.SaveChangesAsync();
             }
             catch (Exception)
@@ -34,6 +33,12 @@ namespace Repository.Concrete
         {
             var resident = await context.Residents.FirstOrDefaultAsync(x => x.Id == id);
             return resident;
+        }
+
+        public List<Resident> GetResidentsInfos()
+        {
+            var infos = context.Residents.ToList();
+            return infos;
         }
 
         public async Task<List<Resident>> GetResidentsAsync()
