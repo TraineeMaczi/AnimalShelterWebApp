@@ -14,7 +14,7 @@ namespace AnimalShelterWebApp.Controllers
     {
      
         private readonly IEventRepository _eventRepository;
-
+        
         public EventController(IEventRepository eventRepository)
         {
             _eventRepository = eventRepository;
