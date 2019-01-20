@@ -69,9 +69,10 @@
                                 <th scope="col">Owner e-mail</th>
                                 <th scope="col">Description</th>
                                 <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
-                        @using (Html.BeginForm("ResidentDelete", "Hotel", "FormMethod.Post"))
+                        @using (Html.BeginForm("ResidentAnimal", "Hotel", "FormMethod.Post"))
                         {
                             <tbody>
                                 @Html.Raw(ViewData["table"])
