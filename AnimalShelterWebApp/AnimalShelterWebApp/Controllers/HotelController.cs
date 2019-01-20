@@ -4,6 +4,8 @@ using Repository.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -50,7 +52,10 @@ namespace AnimalShelterWebApp.Controllers
                             x.Desc +
                         "</td>" +
                         "<td>" +
-                            "<button type=\"submit\" class=\"btn bg-mainGreen text-center text-white m-0\" name=\"delete\" value=\"" + x.Id + "\">Delete</button>" +
+                            "<button type=\"submit\" class=\"btn bg-mainGreen text-center text-white m-0\" name=\"animal\" value=\"send" + x.Id + "\">Send</button>" +
+                        "</td>" +
+                        "<td>" +
+                            "<button type=\"submit\" class=\"btn bg-mainGreen text-center text-white m-0\" name=\"animal\" value=\"" + x.Id + "\">Delete</button>" +
                         "</td>" +
                     "</tr>";
                 }
@@ -59,13 +64,6 @@ namespace AnimalShelterWebApp.Controllers
             ViewData["table"] = table;
 
             return View();
-        }
-
-        public String NotifyAnimalOwner()
-        {
-            //Nie za bardzo wiem jak to zaimplementować w najprostrzym przypdaku można by przy 
-            //stacie app stwierdzać czy data mineła czy nie 
-            return "to do";
         }
 
         [HttpPost]
@@ -91,11 +89,65 @@ namespace AnimalShelterWebApp.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [Route("/Hotel/ResidentDelete")]
-        public async Task<ActionResult> ResidentDelete(string delete)
+        [Route("/Hotel/ResidentAnimal")]
+        public async Task<ActionResult> ResidentAnimal(string animal)
         {
-            Resident resident = new Resident { Id = Int32.Parse(delete) };
-            await _residentRepository.DeleteResidentAsync(resident);
+            if ((animal.Length>4) && (animal.Substring(0, 4).Equals("send")))
+            {
+                // tutaj cała hochsztaplerka żeby wydobyć z bazy odpowiednie zwirze po ID
+                int id = Int32.Parse(animal.Substring(4, animal.Length - 4));
+                List<Resident> l = _residentRepository.GetResidentsInfos();
+                Resident res = l.Where<Resident>( x => x.Id == id).Single<Resident>();
+
+                string password = "Tutej dej hasło!";
+
+                SmtpClient smtpClient = new SmtpClient()
+                {
+                    Credentials = new System.Net.NetworkCredential("animalshelterwebapp@gmail.com", password),
+                    EnableSsl = true,
+                    Port = 587,
+                    Host = "smtp.gmail.com"
+                };
+
+                MailMessage mail = new MailMessage
+                {
+                    From = new MailAddress("animalshelterwebapp@gmail.com", "Animal Shelter", System.Text.Encoding.UTF8),
+                    Subject = "Animal Shelter: Your " + res.Type.ToString() + " is ready to come back home",
+                    BodyEncoding = System.Text.Encoding.UTF8                    
+                };
+
+                mail.Bcc.Add(res.OwnerEmail.ToString());
+
+                StringBuilder body = new StringBuilder();
+
+                body.AppendLine("<html>");
+                body.AppendLine("<head>");
+                body.AppendLine("</head>");
+                body.AppendLine("<body>");
+                body.AppendLine("<h1>Your " + res.Type.ToString() + ", " + res.Name.ToString() + " is ready to come back home</h1>");
+                body.AppendLine("<h3>" + res.Name.ToString() + " was staying here from: " + res.From.ToString() + " to: " + res.To.ToString() + "</h3>");
+                body.AppendLine("</body>");
+                body.AppendLine("</html>");
+
+                mail.Body = body.ToString();
+                mail.IsBodyHtml = true;
+
+                try
+                {
+                    await smtpClient.SendMailAsync(mail);
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Error = ex.ToString();
+                }
+            }
+            else
+            {
+  
+                Resident resident = new Resident { Id = Int32.Parse(animal) };
+                await _residentRepository.DeleteResidentAsync(resident);
+            }
+            
             return Redirect("/Hotel");
         }
     }
